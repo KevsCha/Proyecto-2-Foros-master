@@ -1,0 +1,262 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-y: auto;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+
+@media only screen and (max-width: 768px){
+#container {
+    flex-direction: column;
+}
+}
+
+#userProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#userProfile p {
+    border-radius: 1em;
+    text-align: center;
+    font-weight: 600;
+}
+
+#message {
+    display:none;
+}
+
+#errorMsg{
+    color: var(--error);
+}
+
+#statusMsg{
+    color: var(--status);
+}
+
+@media only screen and (max-width: 768px){
+    #userProfile {
+        margin-top: 20%;
+    }
+    }
+
+@media only screen and (max-width: 426px){
+    #userProfile {
+        width: 70%;
+    }
+    }
+
+
+.profilePic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: white solid 2px;
+}
+
+#updateProfile {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-upload {
+    margin-bottom: 3vh;
+}
+
+.image-upload>input {
+    display: none;
+}
+
+.image-upload img {
+    width: 80px;
+    cursor: pointer;
+}
+
+.image-upload label {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -40px;
+
+}
+
+#updateProfile input {
+    width: 25vw;
+    min-width: 20vw;
+    margin-bottom: 2em;
+    text-align: left;
+    padding-left: 50px;
+}
+
+
+@media only screen and (max-width: 768px){
+    #updateProfile input {
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    #updateProfile input {
+        width: 50vw;
+    }
+}
+
+
+#buttonContainer {
+    display: none;
+    margin-bottom: 6%;
+}
+
+.inputBox {
+    position: relative;
+}
+
+
+
+
+.editIcon {
+    cursor: pointer;
+    margin-left: 88%;
+}
+
+
+#threadContainer {
+    width: 50vw;
+    height: 68.5vh;
+    background-color: var(--input-background);
+    overflow-y: auto;
+    margin-top: 2%;
+    border-radius: 2%;
+}
+
+@media only screen and (max-width: 768px) {
+    #threadContainer {
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .editIcon {
+        margin-left: 82%;
+    }
+
+}
+#noThread p {
+    color: var(--contrast-text);
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 18px;
+    text-align: center;
+}
+
+#noThread img {
+    width: 40%;
+    display: block;
+    margin: 1% auto;
+}
+
+#title {
+    position: relative;
+}
+
+#questionIcon {
+    top: -40%
+}
+
+h2 {
+    color: var(--text);
+    margin-top: 4%;
+    margin-left: 8%;   
+}
+
+#userThread a {
+    text-decoration: none;
+    color: var(--text);
+    cursor: default;
+}
+
+@media only screen and (max-width: 920px){
+    #userThread {
+        height: 50vh;
+    }
+
+    #userThread img {
+        margin-top: 20%;
+        width: 70%;
+    }
+
+    h2 {
+        margin-left: 16%;
+    }
+    
+}
+
+.thread {
+    background: white;
+    border-radius: 1em;
+    margin: 2%;
+    padding: 1%;
+    display: flex;
+    position: relative;
+}
+
+.threadContent {
+    width: 90%;
+}
+
+.threadContent h3 {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+
+.threadText{
+    text-align: justify;
+    font-weight: lighter;
+    margin-left: 2%;
+    margin-right: 3%;
+}
+
+.threadButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.threadButtons button {
+    width: 4vw;
+    height: 2em;
+    border: none;
+    border-radius: 1em;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;;
+}
+
+.editThread{
+    background-color: var(--light-background);
+}
+
+.closeThread{
+    background-color: var(--light-error);
+}
+
+.Cerrado{
+    background-color: #fffffe66;
+    color: var(--contrast-text)
+
+}
+
+.lockIcon{
+    height: 40px;
+    position: absolute;
+    padding: 10px;
+    top: 29%;
+    right: 2%;
+}

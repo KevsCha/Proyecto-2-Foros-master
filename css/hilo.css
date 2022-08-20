@@ -1,0 +1,293 @@
+.temasLista{
+    font-weight: lighter;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 11%;
+}
+
+a {
+    color:var(--text);
+    text-decoration: none;
+}
+
+.temasLista ul{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+}
+
+
+.tituloLista{
+    display: flex;
+    padding-left: 45px;
+}
+
+h4{
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+.temasLista a{
+    display: flex;
+    width: 200px;
+    justify-content: flex-start;
+    background-color: white;
+    color: var(--text);
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    }
+    
+.temasLista a:hover {
+    background-color: #F5CB5C;
+}
+
+.listIcon { 
+    width: 40px;
+    padding: 8px;
+}
+
+.temasLista li{
+    font-weight: 600;
+    padding: 6px;
+    font-size: larger;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.paginaEntera{
+    display: flex;
+    flex-direction: row;
+}
+
+/*PARTE DE LOS HILOS*/
+
+.listaHilos{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 85%;
+}
+
+.hilo{
+    display: flex;
+    flex-direction: row;
+    padding-block: 1%;
+    box-shadow: 5px 5px 10px #cfcbbf;
+    padding-right: 3%;
+    border-radius: 1em;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.listaHilos h2{
+    text-align: center;
+}
+
+.hiloFoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 4%;
+    margin-top: 2%;
+    align-items: center;
+}
+
+.hiloFoto img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+
+.hiloFoto h5{
+    font-size: 1rem;
+}
+
+.hiloTexto{
+    margin-left: 2%;
+}
+
+.hiloTexto h3{
+    margin-bottom:0;
+}
+
+.hiloTexto h6{
+    margin-bottom:0;
+}
+
+.hiloTexto p{
+    text-align: justify;
+    font-weight: lighter;
+}
+
+/*PARTE DEL COMENTARIO*/
+
+.comentario{
+    display: flex;
+    margin-left: 5%;
+    padding-top: 30px;
+}
+
+.comentario textarea{
+    font-weight: lighter;
+    width: 500px;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-top: 2px;
+}
+
+.comentario input{
+    display: flex;
+    font-weight: bold;
+    width: 116px;
+    font-size: 16px;
+    background-color: #F5CB5C;
+    margin-right: 60px;
+    border-radius: 440px;
+    height: 40px;
+    max-width: 153px;
+    justify-content: center;
+    border: none;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.comentario input:hover {
+    color: black;
+}
+
+/*PARTE DE LAS RESPUESTAS*/
+
+.reply{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 100px;
+    padding: 20px;
+    box-shadow: 1px 1px 1px 1px #cfcbbf;
+    padding-right: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 1em;
+}
+
+.replyFoto{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 10px;
+}
+
+.replyTexto{
+    text-align: justify;
+    font-weight: lighter;
+}
+
+.replyTexto img{
+    max-width: 100%;
+}
+
+#postButtons{
+    margin-block: 2%;
+    text-align: right;
+}
+
+.reply a {
+    cursor: auto;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.reply h5 { 
+    margin-bottom: 0;
+}
+
+
+.reply h6 { 
+    margin-top: 2px;
+}
+
+.replyFoto img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.userData {
+    margin-left: 2%;
+}
+
+#closedPost {
+    text-align: center;
+    color:var(--text);
+    font-weight: bold;
+}
+
+.selected{
+    background-color: var(--btn) !important;
+}
+
+.emptyComments{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 5px 5px 10px #cfcbbf;
+    border-radius: 1em;
+    width: 80%;
+    margin-left: 5%;
+}
+
+.tox-tinymce{
+    width: 1155px !important;
+}
+
+@media only screen and (max-width: 1024px) {
+    .temasLista{
+        width: 20%;
+    }
+    .listaHilos{
+        width: 75%;
+    }
+    .tox-tinymce{
+        width: 113% !important;
+    }
+}
+
+
+@media only screen and (max-width: 820px) {
+    .temasLista{
+        width: 25%;
+    }
+    .listaHilos{
+        width: 73%;
+    }
+    .tox-tinymce{
+        width: 500px !important;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .temasLista{
+        display: none;
+    }
+    .listaHilos{
+        width: 100%;
+    }
+
+    .tox-tinymce{
+        width: 300px !important;
+    }
+}
+

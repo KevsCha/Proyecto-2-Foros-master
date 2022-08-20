@@ -1,0 +1,264 @@
+.header_cont {
+    max-width: 275px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.header_cont h1 {
+    display: inline;
+}
+
+.header .is {
+    display: none;
+}
+
+.header .reg {
+    display: none;
+}
+
+.header #reg:hover {
+    background-color: var(--btn-hover);
+}
+
+.header #is:hover {
+    background-color: var(--btn-hover);
+}
+
+/* diseño de los formularios */
+main {
+    width: 100%;
+}
+
+main .registro {
+    display: none;
+}
+
+main .login {
+    display: none;
+}
+
+.caja {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 1.5%;
+    height: 74vh;
+}
+
+.cont_form .title_log {
+    margin-bottom: 35px;
+}
+
+.cont_form h2{
+    margin-bottom: 1%;
+}
+
+.cont_form h4 {
+    margin-top: 2%;
+}
+.cont_form .title_reg {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.title h4 {
+    font-size: 16px;
+}
+
+.title h2 {
+    font-size: 32px;
+}
+
+.caja .cont_form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.caja .log {
+    padding: 2% 3.6%;
+    margin-left: 25px;
+    box-shadow: 0px 2px 4px 2px rgb(0 0 0 / 20%);
+    border-radius: 1em;
+}
+
+.caja .reg {
+    width: 30%;
+    padding: 2% 4%;
+    margin-left: 25px;
+    box-shadow: 0px 2px 4px 2px rgb(0 0 0 / 20%);
+    border-radius: 1em;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+form input {
+    max-width: 295px;
+    width: 100%;
+    height: 45px;
+    padding-left: 31px;
+    border-radius: 5px;
+    background-color: #E8EDDF;
+    border: none;
+    border-style: none;
+}
+
+form .inp_log {
+    margin-bottom: 35px;
+}
+
+form .inp_reg {
+    margin-bottom: 15px;
+}
+
+a{
+    color: var(--btn);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--btn-hover);
+    text-decoration: underline;
+}
+
+
+span a {
+    /* position: absolute; */
+    right: 0;
+    top: 8rem;
+}
+
+form .form_te {
+    margin-top: -10%;
+    margin-left: 34%;
+    font-size: 0.9rem;
+}
+
+form .form_et {
+    margin-top: 2rem;
+}
+
+form button {
+    width: 171px;
+    height: 45px;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    background-color: #F5CB5C;
+}
+
+form .btn_log {
+    margin-top: 41px;
+}
+
+form .btn_reg {
+    margin-top: 7px;
+    margin-bottom: 31px;
+}
+
+form .img_group img {
+    width: 20px;
+}
+
+form .img_group {
+    position: absolute;
+    left: 0.5rem;
+}
+
+form .img_log_email {
+    top: 0.9rem;
+}
+
+form .img_log_pass {
+    top: 5.7rem;
+}
+
+form .img_reg_name {
+    top: 0.7rem;
+}
+
+form .img_reg_email {
+    top: 4.7rem;
+}
+
+form .img_reg_pass {
+    top: 8.3rem;
+}
+
+form .img_reg_vitxt {
+    left: 89%;
+    top: 8.4rem;
+}
+
+form .img_reg_vipass {
+    left: 89%;
+    top: 8.3rem;
+}
+
+form .img_log_vitxt {
+    left: 89%;
+    top: 5.8rem;
+}
+
+form .img_log_vipass {
+    left: 89%;
+    top: 5.7rem;
+}
+
+form .pass {
+    display: none;
+}
+
+form .txt {
+    display: none;
+}
+
+form .img_reg_pass1 {
+    top: 12rem;
+}
+form .input_p{
+    border: #20e208 solid 1px;
+    box-shadow: 0 0 0 #20e208, 0 0 2px #20e208,0 0 10px #20e208 ;
+    transition: 0.2s;
+}
+form .input_m{
+    border: #e12525 solid 1px;
+    box-shadow: 0 0 0 #e12525, 0 0 2px #e12525,0 0 10px #e12525 ;
+    transition: 0.2s;
+}
+.caja .cont_img {
+    width: 50%;
+}
+
+.cont_img img {
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.cont_img .img_one {
+    width: 587px;
+    left: -40px;
+}
+
+.cont_img .img_two {
+    width: 586px;
+    left: 45px;
+}
+
+#message{
+ text-align: center;
+ color: var(--error);
+ white-space: pre-line;
+}

@@ -1,0 +1,520 @@
+:root {
+    --text: #333533;
+    --contrast-text: #808080;
+    --light-background: #cfdbd5;
+    --input-background: #E8EDDF;
+    --btn: #F5CB5C;
+    --btn-hover: #F9E19F;
+    --error: #EF626C;
+    --light-error: #F49096;
+    --status: #034732;
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+header {
+    height: 5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 10px #cfcbbf;
+    position: sticky;
+    z-index:500;
+}
+
+#logoContainer {
+    margin-right: 30%;
+}
+
+@media only screen and (max-width: 920px) {
+    #logoContainer {
+        margin-right: 10%;
+    }
+
+
+}
+
+
+
+h1 {
+    color: var(--text);
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 426px) {
+    #logoContainer {
+        margin-right: 0;
+    }
+
+    h1 {
+        font-size: 0;
+    }
+
+
+}
+
+
+
+.header .header_logo {
+    display: flex;
+    align-items: center;
+}
+
+.header_logo img {
+    width: 65px;
+}
+
+.header_logo {
+    text-decoration: none;
+}
+
+.header .header_perfil {
+    display: flex;
+    align-items: center;
+}
+
+.headerProfile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: white solid 2px;
+}
+
+.perfil_hilo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.loginButtons {
+    width: 50%;
+}
+
+.loginButtons button {
+    margin-left: 75%;
+}
+
+@media only screen and (max-width: 426px) {
+    .perfil_hilo {
+        width: 60%;
+        justify-content: space-between;
+    }
+}
+
+.input{
+    height: 4em;
+    border: none;
+    border-radius: 1em;
+    background-color: var(--input-background);
+    color: var(--contrast-text);    
+}
+.header_search{
+    position: relative;
+}
+
+.header_search input {
+    width: 30vw;
+    padding-left: 50px;
+    padding-right: 20px;
+    font-weight: 500;
+    z-index: 700;
+
+}
+
+.result{
+    position: absolute;    
+    background-color: #fff;    
+    z-index: 600;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.searchCategory{
+    font-size: 0.7em;
+        background: var(--btn-hover);
+        border-radius: 9px;
+        height: 2em;
+        line-height: 2em;
+        margin-right: 2%;
+        padding-inline: 3%;
+}
+
+.searchResult {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 2%;
+    color: black; 
+    text-decoration: none;
+    padding-left: 5%;
+    width: 100%;
+}
+.searchResult div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2%;
+}
+
+
+.searchResult:hover{
+    background: #f2f2f2;
+
+}
+
+.searchResult p {
+    border-bottom: none;
+}
+
+/* @media only screen and (max-width: 920px) {
+    .header_search {
+        width: 60%;
+    }
+} */
+
+#searchIcon {
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+}
+
+@media only screen and (max-width: 426px) {
+    #searchIcon {
+        margin-left: 2.5%;
+    }
+}
+
+
+#searchButton {
+    color: transparent;
+}
+
+#searchButton {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .header_search input {
+        display: none;
+    }
+
+    #searchButton {
+        display: block;
+        background-color: var(--input-background);
+    }
+}
+
+#profileMore {
+    margin-left: -3px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 426px) {
+    #profileMore {
+        display: none
+    }
+}
+
+#profileIconMenu {
+    cursor: pointer;
+}
+
+
+#profileMenu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    width: 145px;
+    height: 7em;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    right: 1%;
+}
+
+#profileMenu a {
+    color: var(--text);
+    text-decoration: none;
+    position:relative;
+    margin-right: 25%;
+}
+
+#profileMenu a:hover {
+    text-decoration: underline;
+}
+
+#profileIcon{
+    top: -36%;
+    right: -59%;
+}
+
+#logoutIcon{
+    top: -36%;
+    right: -39%;
+
+}
+
+@media only screen and (max-width: 768px) {
+    #profileMenu {
+        width: 20vw;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    #profileMenu {
+        width: 30vw;
+        right: 0%;
+    }
+}
+
+
+
+
+.separator {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+
+.nuevoHilo {
+    text-align: right;
+}
+
+.icon {
+    height: 40px;
+    position: absolute;
+    padding: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+#postIcon {
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 920px) {
+    #postIcon {
+        margin-top: 0.2%;
+        margin-left: 2.5%;
+        margin-right: 5px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    #postIcon {
+        margin-top: 0.5%;
+        margin-left: 2.5%;
+    }
+}
+
+
+.button {
+    background-color: var(--btn);
+    width: 10vw;
+    height: 3em;
+    border: none;
+    border-radius: 1em;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--btn-hover);
+}
+
+.cancel {
+    background-color: var(--light-background);
+}
+
+.cancel:hover{
+    background-color: #DCE5E2;
+}
+
+@media only screen and (max-width: 920px) {
+    .header .button {
+        color: transparent;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .button {
+        width: 16vw
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 700;
+    padding-top: 1.5%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);  
+}
+
+#newPost{
+    background-color:var(--input-background);
+    width: 70%;
+    height: auto;
+    margin: 1% auto;
+    border-radius: 1em;
+    padding: 1% 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#xIcon {
+    right: 1%;
+    top: 0%;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    #newPost{
+        width: 85%;
+        margin-top: 5%;
+    }
+
+}
+
+@media only screen and (max-width: 426px) {
+    #newPost{
+        width: 90%;
+        margin-top: 20%;
+    }
+}
+
+#postForm {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 80%;
+    margin-top: 2%;
+}
+
+
+#postForm input {
+    background-color: #fff;
+    margin-bottom: 2%;
+    padding-left: 3%;
+    color: var(--text);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+#postForm select{
+    margin-bottom: 2%;
+    padding: 2%;
+    border-radius: 1em;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    #postForm{
+        width: 90%;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 426px) {
+    #postForm{
+        width: 90%;
+    }
+
+    #postForm input {
+        margin-bottom: 7%; 
+    }
+
+    #postForm select{
+        margin-bottom: 5%;
+    }
+}
+
+
+#postButtons{
+    margin: 2% auto;
+}
+
+@media only screen and (max-width: 426px) {
+    #postButtons button{
+        margin-right: 5px;
+    }
+}
+
+#modalError {
+    display: none;
+    background-color:#fff;
+    width: 50%;
+    height: auto;
+    margin: 1% auto;
+    border-radius: 1em;
+    padding: 5% 4%;
+    text-align: center;
+    font-size: 1.3em;    
+    position: relative;
+    color: var (--text);
+    font-weight: 500;
+}
+
+#modalError a {
+    color: var(--btn);
+}
+
+#modalError a:hover {
+    color: var(--btn-hover);
+}
+
+#modalError .icon{
+    right: 1%;
+    top: 0%;
+    cursor: pointer;
+}
+
+#errorImg {
+    width: 60%;
+}
+
+
+table.mceLayout, textarea.tinyMCE {
+    width: 100% !important;
+}
+
+@media only screen and (min-width: 600px) {
+    table.mceLayout, textarea.richEditor {
+       width: 600px !important;
+    }
+}
