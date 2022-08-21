@@ -9,16 +9,17 @@ if (isset($id)) {
   try {
     $editQuery = "SELECT * FROM usuarios WHERE $id = user_id";
     $editResult = $mysqli->query($editQuery);
+
     while ($row = $editResult->fetch_assoc()) {
       $userData[] = $row;
     }
+    //$userData[0]['user_time']=$_SESSION['date'];
   } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
   }
 }else{
   $userData[0]['user_img']="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
 }
-
 // Obtiene las categorías para el select de nuevo post y para la página de temas
 $categoryArray = [];
 try {
@@ -93,6 +94,7 @@ if (isset($_SESSION['signed_in']) == false) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta >
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -108,7 +110,7 @@ if (isset($_SESSION['signed_in']) == false) {
         <h1>foro</h1>
       </a>
     </div>
-    <?php if (str_contains('css/loginn.css', $css)) : ?>
+    <?php if (str_contains('css/login.css', $css)) : ?>
       <div class="header loginButtons">
         <button id="is" class="button is">
           Iniciar Sesion

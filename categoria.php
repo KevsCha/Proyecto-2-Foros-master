@@ -1,7 +1,7 @@
 <?php
 
 $title = "Categorías";
-$css = "css/hilo.css";
+$css = "css/hiloo.css";
 
 require 'components/config.php';
 include 'components/header.php';
@@ -14,9 +14,18 @@ for ($i = 0; $i < count($categoryArray); $i++) {
     }
 }
 
-$categoryConsulta = "SELECT publicaciones.publi_id, publicaciones.publi_titulo, publicaciones.publi_descri, publicaciones.publi_date, publicaciones.publi_tema, publicaciones.publi_user, usuarios.user_nombre, usuarios.user_img FROM publicaciones JOIN usuarios ON user_id = publi_user WHERE publi_tema = $cod";
+$categoryConsulta = "SELECT publicaciones.publi_id, 
+                            publicaciones.publi_titulo, 
+                            publicaciones.publi_descri, 
+                            publicaciones.publi_date, 
+                            publicaciones.publi_tema, 
+                            publicaciones.publi_user, 
+                            
+                            usuarios.user_nombre, 
+                            usuarios.user_img FROM publicaciones JOIN usuarios ON user_id = publi_user WHERE publi_tema = '$cod' ORDER BY publi_date DESC ";
 $categoryHilos = mysqli_query($connect, $categoryConsulta);
 $selecHilos = [];
+
 while ($cont = mysqli_fetch_assoc($categoryHilos)) {
     $selecHilos[] = $cont;
 }
@@ -37,20 +46,25 @@ while ($cont = mysqli_fetch_assoc($categoryHilos)) {
 
     <div class="listaHilos">
         <h2><?php echo ucwords($cat['tema_nombre']); ?></h2>
-        <?php
+        <?php 
         for ($i = 0; $i < count($selecHilos); $i++) {
             if ($selecHilos[$i]['publi_tema'] == $cat['tema_id']) {
         ?>
                 <a href="hilo.php?id=<?php echo $selecHilos[$i]["publi_id"] ?>">
-                    <div class="hilo<?php
-                                    if (isset($userData[0]) && strtotime($userData[0]['user_time']) < strtotime($selecHilos[$i]['publi_date'])) {
-                                        echo " bord";
-                                        $dateTwo['user_time'] = gmdate("d-F-Y H:i:s ", time() + 3600 * (1 + date("I")));
-                                        $_SESSION['date'] = $dateTwo;
-                                        //es una manera muy obligada de que muestre los mensajes nuevos hay q seguir buscando...
-                                    } ?>">
-
-
+                    <div id="<?php echo $i;?>" class="hilo<?php
+                            if (isset($userData[0]) && strtotime($userData[0]['user_time']) < strtotime($selecHilos[$i]['publi_date'])) {
+                                echo " bord";?>"> <?php 
+                                $dateTwo = gmdate("d-F-Y H:i:s ", time() + 3600 * (1 + date("I")));
+                                $_SESSION['date'] = $dateTwo;
+                                //print_r($userData[0]['user_time']);
+                                //$userData[0]['user_time']=$_SESSION['date'];
+                                //print_r("<<".$userData[0]['user_time']);
+                                //es una manera muy obligada de que muestre los mensajes nuevos hay q seguir buscando...
+                            }else {
+                                ?>"><script>  
+                                    document.getElementById("<?php echo $i;?>").classList.remove("bord"); 
+                                    console.log(document.getElementById("<?php echo $i;?>"));
+                                </script><?php } ?>
                         <div class="hiloFoto">
                             <img src="<?php echo $selecHilos[$i]['user_img'] ?>" alt="">
                             <h5><?php echo $selecHilos[$i]['user_nombre']; ?></h5>

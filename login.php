@@ -1,6 +1,6 @@
 <?php
 require 'components/config.php';
-$css = 'css/loginn.css';
+$css = 'css/login.css';
 $title = 'foro';
 include 'components/header.php';
 if (isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true) {
@@ -23,6 +23,8 @@ if (isset($_POST['login'])) {
                     if ($password == $row['user_cont']) {
                         $_SESSION['id'] = $id;
                         $_SESSION['signed_in'] = true;
+                        $_SESSION['date']=mysqli_fetch_assoc(mysqli_query($connect,"SELECT user_time FROM usuarios WHERE `user_id`='$id'"));
+                        
                         $acceso = date("Y-m-d H:i:s");
                         $int = mysqli_query($connect, "UPDATE `usuarios` SET `user_time`='$acceso' WHERE `user_id`='$id';");
                         header('Location: index.php');
@@ -77,11 +79,37 @@ if (isset($_POST['login'])) {
             <h2>Únete a Foro</h2>
             <h4>La Mayor comunidad de foros</h4>
         </div>
+        <?php
+                    
+                    if (isset($_POST['registrar'])) {
+                        if ($_POST['pass'] == $_POST['valid_pass']) {
+                        
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        $password = $_POST['pass'];
+        
+                        $rev = mysqli_num_rows(mysqli_query($connect, "SELECT user_correo from usuarios where user_correo = '$email' "));
+                            if ($rev == 0) {
+                                $sql = mysqli_query($connect, "INSERT INTO usuarios (user_nombre,
+                                                                                                user_correo,
+                                                                                                user_cont)
+                                                                                        VALUES ('$name',
+                                                                                                '$email',
+                                                                                                '$password')");
+                            } else {$message = "El correo ya se encuentra registrado";?>
+                                <script> alert("<?php echo $message;?>");</script>
+                            <?php }
+                        }else {
+                            $message="Las contraseñas no coinciden";
+                           ?><script> alert("Las contraseñas no coinciden");</script><?php 
+                        }   
+                    }
+                    ?>
         <form method="post" action="#" enctype='multipart/form-data'>
             <label class="img_group img_reg_name"><img src="img/icon_input_name.png" alt=""></label>
             <input class="inp_reg" type="text" name="name" placeholder="Nombre de usuario">
             <label class="img_group img_reg_email"><img src="img/icon_input_nom.png" alt=""></label>
-            <input class="inp_reg" type="text" name="email" placeholder="Email" required>
+            <input class="inp_reg" type="email" name="email" placeholder="Email" required>
             <label class="img_group img_reg_pass"><img src="img/icon_input_pass.png" alt=""></label>
             <label class="img_group img_reg_vitxt pass"><img src="img/vector_eye.png" alt=""></label>
             <label class="img_group img_reg_vipass"><img src="img/icon_input_pass_text.png" alt=""></label>
@@ -90,35 +118,11 @@ if (isset($_POST['login'])) {
             <label class="img_group img_reg_vitxt pass"><img src="img/vector_eye.png" alt=""></label>
             <input id="valid_pass" class="inp_reg" type="password" name="valid_pass" placeholder="Repite tu Contraseña">
             <button class=" button btn_reg" type="submit" name="registrar" id="registerButton">Registrate</button>
+            <p id="message"><?php echo $message?? "" ?></p>
             <span>¿Ya tienes Cuenta? <a class="form_et" href="">Inicia Sesion</a></span>
-
-            <?php
-                    
-            if (isset($_POST['registrar'])) {
-                if ($_POST['pass'] == $_POST['valid_pass']) {
-                
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $password = $_POST['pass'];
-
-                $rev = mysqli_num_rows(mysqli_query($connect, "SELECT user_correo from usuarios where user_correo = '$email' "));
-                    if ($rev == 0) {
-                        $sql = mysqli_query($connect, "INSERT INTO usuarios (user_nombre,
-                                                                                        user_correo,
-                                                                                        user_cont)
-                                                                                VALUES ('$name',
-                                                                                        '$email',
-                                                                                        '$password')");
-                    } else {$error = "El correo ya se encuentra registrado";?>
-                        <script> alert("<?php echo $error;?>");</script>
-                    <?php }
-                }else {
-                   ?><script> alert("Las contraseñas no coinciden");</script><?php 
-                }   
-            }
-            ?>
+            
+           
         </form>
-
     </div>
 </div>
 <script src="js\loginn.js"></script>

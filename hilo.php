@@ -1,6 +1,6 @@
 <?php
 $title = "foro";
-$css = "css/hilo.css";
+$css = "css/hiloo.css";
 $idHilo = $_GET["id"];
 
 include 'components/header.php';
@@ -23,7 +23,6 @@ try {
 } catch (\Exception $e) {
     die($e->getMessage());
 }
-print_r($threadArray);
 // Recuperar los comentarios asociados a la publicación
 $commentQuery = "SELECT comentarios.com_id, comentarios.com_coment, comentarios.com_date, usuarios.user_nombre, usuarios.user_img, comentarios.com_publi
 FROM comentarios
@@ -35,7 +34,6 @@ $commentArray = [];
 while ($row = $commentResult->fetch_assoc()) {
     $commentArray[] = $row;
 }
-
 //Guardar comentario en base de datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['comment'])) {
@@ -66,7 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             for ($i = 0; $i < count($categoryArray); $i++) {
                 echo '<a href="categoria.php?id=' . $categoryArray[$i]["tema_id"] . '"' . ($categoryArray[$i]["tema_id"] == $threadArray[0]["idTema"] ? 'class="selected"' : '') . '>
                 <li><img src="./img/icons/' . ($categoryArray[$i]['tema_id'] == $threadArray[0]["idTema"] ? 'wavyquestion.svg"' : 'compass.svg"') . 'class="listIcon">' . $categoryArray[$i]["tema_nombre"] . '</li></a>';
-            } ?>
+            } 
+           
+            ?>
         </ul>
     </div>
 

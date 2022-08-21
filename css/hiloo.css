@@ -43,7 +43,6 @@ h4{
     transition-duration: 0.4s;
     border-radius: 20px;
     }
-    
 .temasLista a:hover {
     background-color: #F5CB5C;
 }
@@ -91,7 +90,9 @@ h4{
 .listaHilos h2{
     text-align: center;
 }
-
+.listaHilos .bord{
+    border: solid #F5CB5C;
+}
 .hiloFoto{
     display: flex;
     flex-direction: column;
